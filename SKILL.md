@@ -53,8 +53,8 @@ ran a mode command, or the request mixes intents:
 | Evaluate / review / critique / diagnose something that exists | **Audit.** Continue. |
 | Design / build / create / prototype something new | **Not this skill.** Say so in one line and step aside — "This skill audits existing products; for building new UI you want a design skill." Don't half-audit a blank page. |
 | A build request that reached you anyway ("improve this", "redesign this") | **Hand it back, don't convert it.** Say in one line that you can audit it instead if that's useful, then do the work they asked for. An unrequested audit in place of the change is not a helpful substitution. |
-| Mixed intent — "audite et corrige", "review this and fix it" | **Ask which comes first**, or audit first and say the fixes are a separate deliverable. |
-| "Audit it, then fix it" | Audit fully first, deliver the report, **then** implement — never ship the audit as a pull request. The two are different deliverables. |
+| Mixed intent — "audite et corrige", "review this and fix it" | **Write and deliver the report before the first edit.** Not after, not instead. "Corrige" does not dissolve "audite": a diff is not an audit, and findings that exist only in a chat summary were never delivered — the user asked for both and got one. Audit → write the file → summarise it → *then* implement. Ask which they want first only if the ordering genuinely matters to them. |
+| "Audit it, then fix it" | Same sequence, same reason. **Never ship the audit as a pull request** — the two are different deliverables and the report is the one that outlives the branch. |
 
 ### b. What is the scope?
 

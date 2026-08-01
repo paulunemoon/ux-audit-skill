@@ -8,6 +8,14 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- **On mixed intent, the report is written before the first edit.** Given
+  "audite et corrige la page de pricing", a run edited three files and produced
+  no report — the findings existed only in the chat summary. §0a offered "ask
+  which comes first, or audit first and say the fixes are separate", and the run
+  took a third option the row did not rule out: fix, and let the audit be the
+  diff. The row now states the sequence as an order rather than a preference —
+  audit, write the file, summarise, then implement — and says why: *corrige*
+  does not dissolve *audite*, and the user who asked for both got one.
 - **The onchain module is gated by scope, not just by signal.** §0e said
   "signals present -> load web3.md". A tokens review of a repo that ships
   `@solana/*` correctly declined to load it, on the grounds that onchain
