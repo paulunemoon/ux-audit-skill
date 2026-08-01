@@ -8,6 +8,20 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- **The report gains a "What's working, and what I left alone" section.** Two
+  runs invented it independently, and the second half is the part that earns its
+  place: naming what a reader might expect flagged and saying why it wasn't.
+  "I left the single-mode palette, the Manrope/Inter split, and the navbar's
+  32px radius alone — those read as decisions, and I couldn't name a cost."
+  That pre-empts *did you even notice X*, shows the taste discipline was applied
+  rather than claimed, and tells the team which of their choices survived
+  scrutiny — which a list of defects cannot.
+- **Recommendations cite the in-repo precedent when one exists.** "The supplier
+  inputs restore a focus ring correctly 185 lines earlier"; "the review screen
+  you need is already 500 lines up in this file". It is the strongest form a
+  recommendation takes: the fix becomes a copy rather than a design decision, it
+  lands consistent with the product's own conventions instead of importing
+  ours, and the team cannot argue the pattern doesn't fit them.
 - **A description-only review raises nothing below Medium.** A re-run of the
   same description-only prompt produced 13 risks graded 2 Blocker / 6 High /
   5 Medium and no Low at all, which is right: a Low hypothesis about an unseen

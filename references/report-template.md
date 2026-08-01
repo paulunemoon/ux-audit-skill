@@ -100,7 +100,25 @@ you did. A Blocker behind a large refactor may sit below three High/S items that
 ship this week — if you reorder for that reason, note it in a line beneath the
 table.>
 
-## 6. Open questions
+## 6. What's working, and what I left alone
+
+Brief, and meant as calibration rather than balance.
+
+**What's working.** <Two or three specifics, named precisely enough that the
+team recognises them. A reader who sees only failures cannot tell whether you
+understood the product, and cannot tell which of their decisions to keep.>
+
+**What I left alone, and why.** <The things a reader might expect to see
+flagged, that you deliberately didn't. "I left the single-mode palette, the
+Manrope/Inter split, and the navbar's 32px radius alone — those read as
+decisions, and I couldn't name a cost.">
+
+This second part does more work than it looks. It pre-empts *"did you even
+notice X?"*, it shows the taste discipline was applied rather than claimed, and
+it tells the team which of their choices survived scrutiny — which is
+information they cannot get from a list of defects.
+
+## 7. Open questions
 
 Things that need the team's data, or access I didn't have.
 
@@ -497,6 +515,13 @@ works, with known weaknesses · **4** solid, minor issues · **5** exemplary.
 
 - **Findings are self-contained.** A reader who opens on FLOW-01 shouldn't have
   to read the summary to understand it.
+- **When the product already solves this correctly somewhere, say where.**
+  "The supplier inputs restore a focus ring correctly 185 lines earlier"; "the
+  review screen you need is already 500 lines up in this file". This is the
+  strongest form a recommendation takes: the fix is now a copy rather than a
+  design decision, it lands consistent with the product's own conventions
+  instead of importing yours, and the team cannot argue the pattern doesn't fit
+  them. Look for the in-repo precedent before proposing anything from outside.
 - **Never cite a check ID as the reason.** `WEB3-G`, `FORM-B`, `A11Y-D` are this
   skill's internal bookmarks; the team reading the report has never seen them and
   owes them nothing. "Why it matters" opens on what happens to the person. Check

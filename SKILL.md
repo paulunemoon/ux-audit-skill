@@ -290,7 +290,9 @@ unless the user says otherwise). Templates and worked examples live in
 3. **Quick wins** — high impact / low effort, extractable as a standalone list
 4. **Findings by dimension**, sorted by severity within each
 5. **Prioritized backlog** — an ordered, actionable list. Not a 2×2 matrix.
-6. **Open questions** — hypotheses, and what needs user data to settle
+6. **What's working, and what you left alone** — brief; the second half names
+   what a reader might expect flagged and says why it wasn't
+7. **Open questions** — hypotheses, and what needs user data to settle
 
 A per-dimension **maturity rating (1–5)** is optional and allowed. If you use it:
 integers only, one line of justification each, and **no composite score** —
