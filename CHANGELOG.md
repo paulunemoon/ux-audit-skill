@@ -4,6 +4,26 @@ All notable changes to this skill are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- **The intake ask states each evidence option's confidence ceiling, in the
+  question.** A no-evidence run rendered the ask as a picker whose options read
+  "Live URL — highest-confidence evidence, real states, real copy, real focus
+  order", "Source code — rendering has to be inferred", "Figma — runtime
+  behavior inferred", "Screenshots — I audit what's in frame and say so about
+  the rest". The spec explained ceilings to the auditor and never to the person
+  choosing, which is backwards: they are the only one who can go and fetch
+  better evidence, and they will only do it if they know what the cheap answer
+  costs. "Live URL — highest confidence" is what turns a screenshot into a URL.
+- **Named which four questions survive a structured picker's cap.** Evidence,
+  mode, platform, audience — evidence because nothing works without it, audience
+  for its blast radius, platform because it selects a reference file, mode for
+  depth. Scope is the one dropped, so it now has to be stated back in the first
+  sentence of the reply and corrected there, rather than surfacing at the end of
+  a report that audited the wrong amount of product.
+
 ## [1.2.0] — 2026-08-01
 
 Four more absorptions from live runs, and the first pass where all six modes —

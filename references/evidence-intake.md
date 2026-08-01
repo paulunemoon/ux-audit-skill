@@ -255,8 +255,31 @@ specific enough to be answerable in one message:
 > If you can also send the empty, error, and mobile states of the main screen,
 > that covers most of what usually goes unchecked.
 
+**Attach each evidence option's confidence ceiling to the option itself.** The
+person choosing is the only one who can go and get better evidence, and they
+will only do it if they know what the cheap answer costs. Say it in the question,
+not later in the report:
+
+- **Live URL** — highest confidence: real states, real copy, real focus order.
+- **Repo path** — structure, tokens, and accessibility attributes; **rendering
+  has to be inferred**.
+- **Figma link** — design intent and tokens; **runtime behaviour inferred**.
+- **Screenshots** — audited in frame, and explicitly not beyond it.
+- **A description** — hypotheses only, no observations at all.
+
+"Live URL" next to "highest confidence" is what turns a screenshot into a URL.
+A ceiling explained only after the report is written teaches nobody anything.
+
+**If the ask renders as a structured picker, it is capped at four questions.**
+Take **evidence · mode · platform · audience** — evidence because nothing works
+without it, audience because it has the widest blast radius, platform because it
+selects a reference file, mode because it sets the depth. **Scope is the one
+that gets dropped**, so state your reading of it back in the first sentence of
+your reply and invite the correction there — early enough to be cheap, rather
+than discovering at the end that they wanted one screen.
+
 Then work with whatever comes back — including nothing, in which case run the
-verbal-only path above and be explicit about it. **Do not ask a second round.**
+description-only path and be explicit about it. **Do not ask a second round.**
 An audit that arrives late because it interviewed the user three times has
 already lost.
 
