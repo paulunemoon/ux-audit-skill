@@ -4,6 +4,75 @@ All notable changes to this skill are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] — 2026-08-01
+
+Five real audit runs against live projects, and everything below comes from
+them. Three of the seven changes are not bug fixes — they are cases where a run
+produced something better than the specification described, and the
+specification lost.
+
+### Added
+
+- **A description-only review shape** (`report-template.md`). Given three
+  sentences about a product and no screen to look at, the previous instruction
+  was to push every hypothesis into §6 Open questions — which leaves §2 through
+  §5 empty and §6 carrying the entire document. The shape that works is now
+  written down: the title says *review*, not *audit*; every ID carries an `H-`
+  prefix so a hypothesis survives being quoted into a ticket; the severity field
+  reads **"Severity if confirmed"** and repeats that under the section heading;
+  **"The questions that settle it"** replaces an Evidence field that cannot
+  exist; there is no Confidence column, because a column of one repeated value
+  is noise; and the closing note welcomes being wrong — *some of this will be
+  invalidated by the first screenshot, which is the point.*
+- **Stakes, as an axis in the gate** (SKILL.md §0f). Audience was graded by
+  expertise and had nothing for consequence. Health, money, legal standing,
+  safety, children, and anything irreversible now raise the bar in four stated
+  ways: tone stays sober whatever the product's usual voice, claims about the
+  user's body or money commit you, collected data is sensitive by category, and
+  **failure is asymmetric** — a discouraging screen can cost the outcome the
+  product exists for while registering as ordinary churn. A cheerful tone is Low
+  in a to-do app and High on a relapse screen.
+- **Real example rows in the quick-mode findings table.** It shipped with a
+  single empty row, so there was no Confidence value to copy and the column
+  filled with the bare enum word from the schema. Four populated rows now, with
+  a compound `Observed (code); 404 Inferred` among them.
+
+### Changed
+
+- **Confidence requires its source, and splits when a finding is part fact and
+  part inference.** `Observed` alone hides the difference between reading a line
+  of CSS and measuring a rendered pixel, so the qualifier — `(code)`,
+  `(rendered)`, `(measured)`, `(design file)`, `(recording)` — is now required,
+  and `Observed (code); rendering Inferred` is the form for a finding whose
+  existence was read but whose appearance was never seen. Named the failure it
+  prevents: a scope section stating that nine of ten screens were never rendered,
+  above findings that are all marked Observed anyway.
+- **A finding names its primary dimension plus the others it touches.** The
+  schema asked for one; real findings routinely span two or three.
+- **The audit-vs-creation row in §0a is scoped to cases that can actually reach
+  it.** It carried a rule for "improve this" that could never execute — skill
+  selection happens against the request text, so the exact phrasing the rule
+  described is the phrasing that prevents the skill loading. §0a now states that
+  it runs *after* loading, that a build request will not load the skill by
+  design, and that this is not a missed audit. The ambiguous row is replaced by
+  a hand-it-back rule: offer the audit in one line, then do the work asked for.
+- **Reports are never written into the home directory.** A description-only
+  review runs from `~` because there is no repo to be in.
+
+### Fixed
+
+- **Check IDs were being cited as the reason a finding matters.** `WEB3-G calls
+  for…` opened a Why-it-matters in a live run. The IDs are internal bookmarks
+  the reader has never seen; citing one is the same move as "best practice
+  says". §3 now says where they belong (a trailing `Related.` line, or nowhere),
+  gives a don't/do table using the real failing sentence, and adds the test: if
+  you cannot state the consequence without naming a check, you have found a rule
+  the product does not follow, which is not the same thing.
+- **Self-reported counts drifted.** A section headed "6 findings" carried seven,
+  and a run described its own report as holding 34 when it held 40. Counts are
+  now written last, from the finished document, or left out — including when
+  describing the report in conversation.
+
 ## [1.0.0] — 2026-08-01
 
 First public release.
@@ -150,4 +219,5 @@ Tracked in [SKILL-BRIEF.md](SKILL-BRIEF.md) §8:
 6. Nothing enforces that a report is written to a file rather than printed into
    the conversation — it is stated as a rule, not checked.
 
+[1.1.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.1.0
 [1.0.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.0.0
