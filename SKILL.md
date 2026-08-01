@@ -39,11 +39,21 @@ one round of questions, once.**
 
 ### a. Is this an audit, or a creation request?
 
+**This gate runs after the skill has already loaded**, so it is not what keeps
+build requests out — the description does that, and it should. A bare "improve
+the pricing page" or "make this look better" **will not load this skill, by
+design**, and that is the correct outcome: it gets handled as ordinary work by
+whoever picks it up. Do not treat a build request as a missed audit.
+
+The rows below are for when you are *already here* — the user named the skill,
+ran a mode command, or the request mixes intents:
+
 | The request | Do |
 |---|---|
 | Evaluate / review / critique / diagnose something that exists | **Audit.** Continue. |
 | Design / build / create / prototype something new | **Not this skill.** Say so in one line and step aside — "This skill audits existing products; for building new UI you want a design skill." Don't half-audit a blank page. |
-| "Redesign this" / "improve this" | **Ambiguous — ask.** A redesign wants changed code; an audit wants findings. If they want both, audit first and say the recommendations are a separate piece of work. |
+| A build request that reached you anyway ("improve this", "redesign this") | **Hand it back, don't convert it.** Say in one line that you can audit it instead if that's useful, then do the work they asked for. An unrequested audit in place of the change is not a helpful substitution. |
+| Mixed intent — "audite et corrige", "review this and fix it" | **Ask which comes first**, or audit first and say the fixes are a separate deliverable. |
 | "Audit it, then fix it" | Audit fully first, deliver the report, **then** implement — never ship the audit as a pull request. The two are different deliverables. |
 
 ### b. What is the scope?
