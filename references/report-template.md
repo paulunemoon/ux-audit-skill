@@ -20,6 +20,15 @@
 >
 > Never drop a report loose in `~`; that clutters somewhere nobody curates. But
 > "not in `~`" resolves to *a different directory*, **never to not writing it**.
+>
+> **Evidence a finding rests on lives next to the report, not in a scratch
+> directory.** Screenshots you captured, measurement dumps, a JSON of computed
+> ratios: if a finding cites it, it has to still exist when someone opens the
+> report next week. A temp directory is where that evidence goes to die, and a
+> report whose proof has evaporated is back to being an assertion. Put them in
+> `<report-name>-evidence/` beside the file and reference them by relative path.
+> If you did generate artefacts somewhere temporary, say so and move them —
+> don't offer it as an option the reader has to think about.
 
 ## Table of contents
 1. [Full audit report](#full-audit-report)

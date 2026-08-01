@@ -4,10 +4,33 @@ All notable changes to this skill are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.3.0] — 2026-08-02
+
+Twenty-one audit runs across seven real projects, covering all six modes and
+every evidence source the skill claims to handle — live product, Figma via MCP,
+screenshots, source code, and description-only. Eleven changes, most of them
+absorptions rather than fixes: cases where a run produced something better than
+the specification described.
+
+Two of the six modes were exercised for the first time against a native mobile
+app and a desktop application, and one run rendered and measured a live
+interface rather than reading it — closing the gap where `Observed (rendered)`
+and `Observed (measured)` had never been legitimately earned by anything.
+
+**One change in here is not yet verified.** The write-a-file fix for `quick`
+mode is the second attempt at that defect; the first did not hold, and the
+re-run that would confirm the second has not been done. It is called out in its
+entry below rather than presented as settled.
 
 ### Changed
 
+- **Evidence a finding rests on lives next to the report.** A desktop-app audit
+  captured screenshots and raw measurement JSON into a scratch directory, cited
+  them, and then had to offer to move them somewhere durable. A temp directory is
+  where proof goes to die, and a report whose evidence has evaporated is back to
+  being an assertion. Artefacts now go in `<report-name>-evidence/` beside the
+  file, referenced by relative path — and moving them is not an option to offer,
+  it is part of writing the report.
 - **An out-of-scope discovery that changes an in-scope finding is named, not
   audited** (§0b). A one-screen audit found a server action outside its scope
   that would invalidate half of its first finding, and handled it exactly right:
@@ -337,6 +360,7 @@ Tracked in [SKILL-BRIEF.md](SKILL-BRIEF.md) §8:
 6. Nothing enforces that a report is written to a file rather than printed into
    the conversation — it is stated as a rule, not checked.
 
+[1.3.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.3.0
 [1.2.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.2.0
 [1.1.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.1.0
 [1.0.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.0.0
