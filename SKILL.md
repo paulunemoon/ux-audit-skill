@@ -63,6 +63,16 @@ copy only, design-system consistency only). Scope decides how much you load and
 how many findings are reasonable. **Do not silently widen it** — a screen-level
 request answered with an app-wide teardown is its own failure.
 
+**When something outside the scope would change a finding inside it, say so —
+and keep it outside.** You will find these; a screen's defect often traces to a
+server action, a shared package, or a decision made elsewhere. The move is to
+name it, **mark it explicitly out of scope**, and state what it would change:
+*"out of scope, but if this is confirmed it invalidates half of finding 1."*
+That gives the team the thread to pull without turning a one-screen request into
+an app-wide audit — and it is honest about a finding whose severity is
+conditional on something you didn't audit. Auditing it anyway is widening;
+staying silent about it is withholding.
+
 ### c. What platform?
 
 Marketing website · web app · mobile app (native iOS/Android) · desktop app ·

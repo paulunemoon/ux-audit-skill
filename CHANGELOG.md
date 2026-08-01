@@ -8,6 +8,13 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- **An out-of-scope discovery that changes an in-scope finding is named, not
+  audited** (§0b). A one-screen audit found a server action outside its scope
+  that would invalidate half of its first finding, and handled it exactly right:
+  flagged, marked out of scope, with what it would change if confirmed. §0b said
+  only "do not silently widen" and gave no instruction for the material thing
+  found outside — so the two available readings were widen, or say nothing.
+  Auditing it is widening; staying silent is withholding. Naming it is neither.
 - **On mixed intent, the report is written before the first edit.** Given
   "audite et corrige la page de pricing", a run edited three files and produced
   no report — the findings existed only in the chat summary. §0a offered "ask
