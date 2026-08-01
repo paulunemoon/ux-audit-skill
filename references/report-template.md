@@ -180,7 +180,15 @@ and say how many were seen.
 
 | ID | Finding | Dimension | Severity | Confidence | Effort |
 |---|---|---|---|---|---|
-| … | | | | | |
+| NAV-01 | `/videos` deleted; four call sites still link to it | Navigation & IA | **Blocker** | Observed (code); 404 Inferred | S |
+| A11Y-01 | Secondary text at 3.19:1, ~50 uses on the core path | Accessibility | High | Observed (measured) | S |
+| FBK-01 | "Stop" button wired to the send handler; no-ops while streaming | Feedback & states | High | Observed (code) | M |
+| STATE-01 | No empty state on the main list | State coverage | Medium | Inferred (no branch in code) | S |
+
+**Fill the Confidence cell the same way** — it carries the source, and it splits
+when the finding is part fact and part inference (SKILL.md §3). A column of
+identical bare `Observed` in a sweep where nothing was run is the tell that the
+label was typed rather than judged.
 
 <One short paragraph per finding beneath the table: evidence, consequence,
 fix. Three or four sentences each — no full schema blocks in quick mode.>
