@@ -14,7 +14,7 @@ description: >-
   grades every finding by severity, confidence, and evidence. Layers an
   onchain/web3 module on top only when the product is onchain. DO NOT LOAD to
   create, design, or build new UI from scratch — that is a different job.
-version: 1.1.0
+version: 1.2.0
 license: MIT
 ---
 

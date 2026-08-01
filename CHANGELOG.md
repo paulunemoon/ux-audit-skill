@@ -4,7 +4,12 @@ All notable changes to this skill are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.2.0] — 2026-08-01
+
+Four more absorptions from live runs, and the first pass where all six modes —
+`audit`, `quick`, `flow`, `a11y`, `tokens`, `web3` — were exercised against real
+projects. `flow`, `a11y` and `web3` each followed their template on the first
+try and produced no corrections, which is why none appear below.
 
 ### Changed
 
@@ -254,5 +259,6 @@ Tracked in [SKILL-BRIEF.md](SKILL-BRIEF.md) §8:
 6. Nothing enforces that a report is written to a file rather than printed into
    the conversation — it is stated as a rule, not checked.
 
+[1.2.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.2.0
 [1.1.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.1.0
 [1.0.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.0.0
