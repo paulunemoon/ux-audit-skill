@@ -163,9 +163,12 @@ accent's own, so a neon brand doesn't get neon greys.
   too weak.
 
 **Fix.** A tinted neutral ramp with distinct steps for base, surface, raised,
-muted, three border weights, and three or four text levels.
-`scripts/generate-palette.py` produces one from any anchor hex if the
-recommendation needs a worked example — **as an illustration, not a rebrand.**
+muted, three border weights, and three or four text levels. **Describe the shape
+the ramp needs; don't generate one.** Producing a replacement palette is design
+work and it is not what was asked for — the finding is that the neutrals can't
+express the elevation the product needs, and the recommendation is the steps
+that are missing plus the specific values that would clear AA where the current
+ones don't (`scripts/contrast-check.py --suggest`).
 
 ---
 

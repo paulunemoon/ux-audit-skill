@@ -4,6 +4,37 @@ All notable changes to this skill are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] — 2026-08-02
+
+### Removed
+
+- **`scripts/generate-palette.py` is gone.** It was invoked zero times across
+  twenty-two runs and twenty-seven reports, while `contrast-check.py` was cited
+  in ten of them. More telling than the disuse: its sanctioned case arose and it
+  still wasn't used. A tokens review found an ink ramp failing AA at three of its
+  four levels — exactly "the palette has no accessible ramp" — and the
+  recommendation was three replacement hex values verified with
+  `contrast-check`, not a generated ramp. That is the correct audit-shaped fix:
+  the smallest change that clears AA inside the system the product already has.
+
+  Its main capability was also forbidden by this skill's own doctrine, stated in
+  three separate files: *an audit never regenerates a team's palette*. A tool
+  whose central function the surrounding rules ban is not a tool with a
+  guardrail, it is an attractive nuisance — and prose guardrails have already
+  been shown here to fail when they sit somewhere a mode doesn't load. The file
+  remains in git history.
+
+### Changed
+
+- `SKILL.md`, `README.md`, `SKILL-BRIEF.md` and `dimensions/design-system.md`
+  updated to match, each stating that the absence is deliberate rather than
+  leaving a gap where a script used to be. DS-E now says to **describe the shape
+  the ramp needs rather than generate one** — the finding is that the neutrals
+  can't express the elevation the product needs, and the recommendation is the
+  missing steps plus the values that would clear AA.
+- `SKILL-BRIEF.md` records the rule that follows from this: **before adding a
+  script, check that the skill doesn't forbid what it does.**
+
 ## [1.3.1] — 2026-08-02
 
 Documentation only. No change to `SKILL.md`, the reference files, the scripts or
@@ -390,6 +421,7 @@ Tracked in [SKILL-BRIEF.md](SKILL-BRIEF.md) §8:
 6. Nothing enforces that a report is written to a file rather than printed into
    the conversation — it is stated as a rule, not checked.
 
+[1.4.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.4.0
 [1.3.1]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.3.1
 [1.3.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.3.0
 [1.2.0]: https://github.com/paulunemoon/ux-audit-skill/releases/tag/v1.2.0

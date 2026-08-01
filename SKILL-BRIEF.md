@@ -123,11 +123,20 @@ they belong in `SKILL.md` instead.
 
 **Scripts are for remediation, not grading.** `contrast-check.py` turns "that
 looks low contrast" into a measurement, which is what makes an accessibility
-finding unarguable. `generate-palette.py` illustrates an alternative when the
-finding is "there's no accessible ramp". Neither decides anything. The rule that
-an audit never regenerates a team's palette is stated in `SKILL.md`, in
-`design-system.md`, and in the README, because it's the most tempting thing to
-get wrong with a generator in the box.
+finding unarguable. It decides nothing.
+
+**There is no palette generator, and its removal is the point.** One shipped
+through 1.3.1 and was never once invoked across twenty-two runs — including on a
+product whose ink ramp failed AA at three of four levels, which was its
+sanctioned use case. That audit proposed three replacement hex values verified
+with `contrast-check`, which is the correct audit-shaped fix: the smallest change
+that clears AA inside the system the product already has. Meanwhile the tool's
+main capability — generating a ramp — is forbidden by this skill's own doctrine
+in three separate files. A tool whose central function the surrounding rules ban
+is not a tool with a guardrail; it is an attractive nuisance, and prose
+guardrails have already been shown here to fail when they sit somewhere the
+reader doesn't load. **Before adding a script, check that the skill doesn't
+forbid what it does.**
 
 **The web3 module opens by stating it layers on.** Without that line, an onchain
 audit tends to become *only* an onchain audit, and the product's forms,

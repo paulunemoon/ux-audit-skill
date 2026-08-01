@@ -174,35 +174,34 @@ harnesses; `.claude/commands/` holds thin wrappers over them.
 - **No padding.** A thin audit honestly scoped beats a long one full of generic
   observations.
 
-## Scripts
+## Script
 
-Both are Python 3 with no dependencies, no network, and no API key. They exist
-to make recommendations concrete — they don't grade anything.
+One, in Python 3, with no dependencies, no network and no API key. It exists to
+make recommendations concrete — it doesn't grade anything.
 
 ```bash
 # WCAG 2.x contrast — a pair, one-to-many, a whole palette, or a fill's best ink
 python3 scripts/contrast-check.py "#8A8F98" "#F5F5F7" --suggest
 python3 scripts/contrast-check.py --matrix "#111827" "#6B7280" "#FFFFFF"
 python3 scripts/contrast-check.py --on "#F0A500"
-
-# Deterministic OKLCH palette — for when a finding needs a worked alternative
-python3 scripts/generate-palette.py "#7C5CFF" --css
 ```
 
-`contrast-check.py` handles alpha compositing (opacity is not colour), picks a
-fill's on-colour by **measured** contrast rather than a lightness threshold,
-warns when a shade has no AA-legible ink at all, and suggests the nearest
-passing shade of the same hue. It exits non-zero when something fails, so it can
-gate a check.
+It handles alpha compositing (opacity is not colour), picks a fill's on-colour
+by **measured** contrast rather than a lightness threshold, warns when a shade
+has no AA-legible ink at all, and suggests the nearest passing shade of the same
+hue. It exits non-zero when something fails, so it can gate a check.
 
-`generate-palette.py` exists for the case where a finding is "there's no
-accessible ramp here" and the recommendation needs a worked alternative to point
-at. **An audit never regenerates a team's palette** — it produces findings, not
-a rebrand.
+**There is deliberately no palette generator.** One shipped through 1.3.1 and
+was never invoked in twenty-two runs — not even on a product whose ink ramp
+failed AA at three of its four levels, which was exactly the case it was kept
+for. That audit proposed three replacement values verified with
+`contrast-check`, which is the right shape: the smallest change that clears AA
+inside the system the product already has. **An audit produces findings, not a
+rebrand**, and a generator in the box invites the opposite.
 
 ## What it's been exercised against
 
-Version 1.3.0 follows twenty-two audit runs across seven real projects: a
+Version 1.4.0 follows twenty-two audit runs across seven real projects: a
 marketing site, two web apps, a native React Native app, an Electron desktop
 app, an onchain product, and one product that existed only as three sentences of
 description. All six modes and all five evidence sources were used. Twelve
@@ -258,8 +257,7 @@ references/
   report-template.md                     output structures, including quick,
                                          flow, a11y, tokens and description-only
 scripts/
-  contrast-check.py
-  generate-palette.py
+  contrast-check.py                      WCAG contrast, the only script
 .claude/commands/                        thin wrappers over the modes
 ```
 

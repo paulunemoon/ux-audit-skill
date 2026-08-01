@@ -14,7 +14,7 @@ description: >-
   grades every finding by severity, confidence, and evidence. Layers an
   onchain/web3 module on top only when the product is onchain. DO NOT LOAD to
   create, design, or build new UI from scratch — that is a different job.
-version: 1.3.1
+version: 1.4.0
 license: MIT
 ---
 
@@ -406,14 +406,16 @@ report the ten that matter and say thirty were seen.
 
 ## Scripts
 
-Both are dependency-free Python 3, no API, no network — they support
-**remediation proposals**, they are not part of grading.
+Dependency-free Python 3, no API, no network. It supports **remediation
+proposals**; it is not part of grading.
 
 - `scripts/contrast-check.py` — WCAG 2.x contrast ratios for a pair, a foreground
-  against several backgrounds, or a whole palette; reports AA/AAA pass/fail and
-  suggests the nearest passing shade. Use it to make a contrast finding concrete
+  against several backgrounds, or a whole palette; reports AA/AAA pass/fail,
+  warns when a shade has no AA-legible ink at all, and suggests the nearest
+  passing shade of the same hue. Use it to make a contrast finding concrete
   instead of eyeballed.
-- `scripts/generate-palette.py` — deterministic OKLCH palette generator. Use it
-  when a finding is "the palette is ad-hoc / has no accessible ramp" and the
-  recommendation needs a worked alternative. **Never regenerate a team's palette
-  as part of an audit** — an audit produces findings, not a rebrand.
+
+**There is deliberately no palette generator here.** The fix for a failing
+colour is the smallest set of values that clears AA in the product's existing
+system — `--suggest` gives you those — not a new ramp. **An audit never
+regenerates a team's palette**: it produces findings, not a rebrand.
