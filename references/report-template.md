@@ -4,15 +4,22 @@
 > and §3 the finding schema; this file is the shapes to fill in and the worked
 > examples.
 >
-> Default deliverable: **a Markdown file** in the working directory, named
-> `ux-audit-<scope>-<YYYY-MM-DD>.md` unless the user asks otherwise. Write the
-> file; don't only print the report into the conversation.
+> **The report is a file. Always. There is no branch of this that ends in
+> "printed it into the chat instead."** Conversation scrollback is not a
+> deliverable — it can't be shared, diffed, reopened next week, or pasted into a
+> ticket, and the audit was the work. Write the file, then summarise it in the
+> reply.
 >
-> **Never write it into the home directory.** A description-only review often
-> runs from `~` because there's no repo to be in — dropping a report there
-> clutters somewhere the user doesn't curate. If the working directory is `~`
-> or otherwise isn't a project, say where you're putting it and use a sensible
-> subdirectory, or ask.
+> Where it goes, with no optional branch:
+>
+> | Working directory | Write to |
+> |---|---|
+> | A project (a repo, or anything that isn't `~`) | There: `ux-audit-<scope>-<YYYY-MM-DD>.md` |
+> | The home directory, or nothing project-like | `~/Documents/ux-audits/` — create it if absent, and say in one line where the file landed |
+> | The user named a location | There |
+>
+> Never drop a report loose in `~`; that clutters somewhere nobody curates. But
+> "not in `~`" resolves to *a different directory*, **never to not writing it**.
 
 ## Table of contents
 1. [Full audit report](#full-audit-report)

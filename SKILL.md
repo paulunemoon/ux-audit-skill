@@ -243,8 +243,15 @@ sees every day outranks a High on a settings page three people visit.
 - **Observed** — you saw it. **Always name the source in parentheses**, because
   "Observed" alone hides the difference between reading a line of CSS and
   measuring a rendered pixel: `Observed (code)` · `Observed (rendered)` ·
-  `Observed (measured)` · `Observed (computed)` · `Observed (design file)` ·
-  `Observed (recording)`. Combine when both apply — `Observed (code + computed)`.
+  `Observed (measured)` · `Observed (computed)` · `Observed (sampled)` ·
+  `Observed (design file)` · `Observed (recording)`. Combine when both apply —
+  `Observed (code + computed)`.
+
+  **That list is examples, not an enum.** If none of the words fits what you
+  actually did, write the one that does — `Observed (pixel-sampled from a
+  screenshot, not measured on a render)` is a better label than any of the above
+  if that is what happened. The rule underneath is the only one that matters:
+  **name the source precisely, and never borrow a stronger word than you earned.**
 
   **`measured` and `computed` are not the same claim**, and contrast is where
   the difference bites. A ratio read off rendered pixels is *measured*; a ratio
@@ -281,8 +288,11 @@ haven't seen the code, say the estimate is rough.
 
 ## 4. Report structure
 
-Markdown file by default (`ux-audit-<scope>-<date>.md` in the working directory
-unless the user says otherwise). Templates and worked examples live in
+**The deliverable is a Markdown file, in every case** —
+`ux-audit-<scope>-<date>.md` in the working directory, or `~/Documents/ux-audits/`
+when there is no project to be in. Write it, then summarise it in your reply.
+Summarising into the chat *instead of* writing it is not a lighter version of
+the deliverable; it is not delivering. Paths and templates live in
 **`references/report-template.md`** — don't inline them here.
 
 1. **Scope & evidence base** — what was audited, what was not, with what access

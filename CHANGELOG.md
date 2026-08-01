@@ -8,6 +8,22 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- **The report is always a file — the "never write into `~`" rule was being read
+  as licence not to write at all.** A live-URL run produced a full review, five
+  and a half minutes of work, and left nothing on disk; a screenshot run in the
+  same session resolved the same rule correctly by creating
+  `~/Documents/ux-audits/`. The escape hatch was mine: the rule ended in "or
+  ask", and one run took it. Rewritten as a table with no branch that ends in
+  not writing — project directory, else `~/Documents/ux-audits/`, else where the
+  user said. Conversation scrollback is not a deliverable: it cannot be shared,
+  diffed, reopened, or pasted into a ticket.
+- **The confidence-qualifier list is examples, not an enum.** Three separate runs
+  invented a word the list lacked — `computed`, then `pixel-sampled from a
+  screenshot, not measured on a render`. Each time the invented word was more
+  honest than anything on offer. Rather than chase the list, the principle is now
+  stated: name the source precisely, invent the word when none fits, and never
+  borrow a stronger one than you earned. `sampled` added as an example, since
+  screenshot audits will keep needing it.
 - **The intake ask states each evidence option's confidence ceiling, in the
   question.** A no-evidence run rendered the ask as a picker whose options read
   "Live URL — highest-confidence evidence, real states, real copy, real focus
