@@ -4,6 +4,26 @@ All notable changes to this skill are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- **README brought up to 1.3.0.** The install block was missing the six mode
+  commands entirely, so a fresh install got the skill and none of the shortcuts;
+  the modes table still listed the unprefixed `/audit` and `/quick`; the report
+  structure was six sections rather than seven; and confidence was described as
+  the old three-value enum with no mention of source qualifiers, compound
+  splits, or the description-only review shape. Adds where reports and their
+  `-evidence/` directories land, the stakes axis, the scope and
+  audit-is-not-a-pull-request stances, an honest note on what the skill has
+  actually been exercised against, and the update instructions.
+
+### Fixed
+
+- **A line in the README disclosed the repository's history**, describing
+  `generate-palette.py` as "kept from this repo's previous life as a design
+  skill". Rewritten to state what the script is for.
+
 ## [1.3.0] — 2026-08-02
 
 Twenty-one audit runs across seven real projects, covering all six modes and
