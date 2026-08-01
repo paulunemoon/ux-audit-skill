@@ -17,10 +17,17 @@ app and a desktop application, and one run rendered and measured a live
 interface rather than reading it — closing the gap where `Observed (rendered)`
 and `Observed (measured)` had never been legitimately earned by anything.
 
-**One change in here is not yet verified.** The write-a-file fix for `quick`
-mode is the second attempt at that defect; the first did not hold, and the
-re-run that would confirm the second has not been done. It is called out in its
-entry below rather than presented as settled.
+**Verified after release.** The `quick`-mode write-a-file fix was the second
+attempt at that defect and was published unconfirmed. It has since been
+exercised: a bare-URL sweep from the home directory wrote
+`~/Documents/ux-audits/ux-quick-<scope>-<date>.md` unprompted, created the
+`-evidence/` directory beside it holding the fetched HTML and CSS, and labelled
+every finding `Observed (DOM)`, `Observed (CSS + DOM)` or
+`Observed (CSS); rendering Inferred` — zero claims of `rendered` or `measured`
+from a source that had neither. The earlier failure was diagnosed against an
+installation pinned seven commits behind, which never contained the fix; the
+structural observation that prompted it stands, the inference that it had failed
+did not.
 
 ### Changed
 
