@@ -175,6 +175,21 @@ Recommendation  the concrete change; verbatim copy rewrites when copy is the iss
 Effort          S | M | L
 ```
 
+**"Why it matters" opens on the person, never on this skill.** A check ID is not
+a reason — it's a bookmark, and citing one to justify a finding is the same move
+as "best practice says". The check IDs in the reference files exist so *you* can
+navigate them and so related findings can be batched; they are internal. Put
+them in a trailing `Related.` line if they're useful, and nowhere else.
+
+| Don't | Do |
+|---|---|
+| "WEB3-G calls for the insufficient state to be surfaced at input time." | "The user has to convert 5,376 tokens and 3,200 hours into the same unit and subtract, to discover why the button is dead. Most will conclude it's broken." |
+| "This violates FORM-B — placeholders aren't labels." | "Once they start typing, the field's meaning is gone. Anyone interrupted mid-form can't tell what they were entering." |
+
+If you can't state the consequence without naming a check, you haven't found a
+finding — you've found a rule the product doesn't follow, which is not the same
+thing and may not matter here.
+
 ### Severity — graded the same way every time
 
 - **Blocker** — users **cannot complete a core task**, or they risk irreversible

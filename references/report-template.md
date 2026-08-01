@@ -391,6 +391,10 @@ works, with known weaknesses · **4** solid, minor issues · **5** exemplary.
 
 - **Findings are self-contained.** A reader who opens on FLOW-01 shouldn't have
   to read the summary to understand it.
+- **Never cite a check ID as the reason.** `WEB3-G`, `FORM-B`, `A11Y-D` are this
+  skill's internal bookmarks; the team reading the report has never seen them and
+  owes them nothing. "Why it matters" opens on what happens to the person. Check
+  IDs belong in a trailing `Related.` line or nowhere (SKILL.md §3).
 - **Quote, don't paraphrase.** "The button reads *Continue*", not "the button
   has generic copy".
 - **Locations are precise.** URL, screen name, `file.tsx:42`, Figma node id.
