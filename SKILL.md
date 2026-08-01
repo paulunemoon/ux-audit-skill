@@ -367,6 +367,14 @@ Defined here so the skill is portable; `.claude/commands/` are thin wrappers.
 | **tokens** | Design system consistency only | `dimensions/design-system.md` + `dimensions/visual-hierarchy.md` | Drift inventory + consolidation proposal |
 | **web3** | Onchain surfaces only | `web3.md` + `dimensions/trust-and-dark-patterns.md` | Onchain findings layered on any general ones already made |
 
+**Every mode writes a file. Including `quick`.** A shorter report is still a
+report — a five-minute sweep whose findings exist only in the conversation is
+five minutes the user cannot share, reopen, or paste into a ticket. `quick`
+means *fewer findings*, never *no artefact*. If the working directory isn't a
+project, `~/Documents/ux-audits/` and say where it landed. This applies to every
+row of the table above, whatever a mode's section of `report-template.md` does or
+doesn't repeat.
+
 `quick` is a real constraint, not a suggestion: if a sweep finds thirty things,
 report the ten that matter and say thirty were seen.
 

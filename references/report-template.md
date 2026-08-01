@@ -197,6 +197,13 @@ both.
 **Ten findings maximum.** If the sweep surfaced more, report the ten that matter
 and say how many were seen.
 
+**It is still a file.** Quick mode has failed this twice in testing, both times
+on a bare URL with no local project to anchor to, and both times the reasoning
+was that a short sweep is proportionate to a chat reply. It isn't: length is
+what `quick` reduces, not the artefact. Write
+`~/Documents/ux-audits/ux-quick-<scope>-<date>.md` when there's no project
+directory, say in one line where it landed, and then summarise it.
+
 ````markdown
 # UX quick review — <product>
 

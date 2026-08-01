@@ -39,6 +39,17 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   which is the source of truth", which costs a fraction of a tokenization
   project. Two questions now stated as worth asking rather than assuming: is the
   design file still maintained, and is this a deliberate house style.
+- **The write-a-file rule was invisible from `quick` mode, which is where it kept
+  being broken.** It existed in two places and neither was reachable: the header
+  block of `report-template.md`, while the quick command says to load "only the
+  quick-mode section" of that file; and SKILL.md §4, which is titled *Report
+  structure* and enumerates the full seven-section report, so a mode with a
+  different structure reads §4 as not applying and discards the file requirement
+  along with it. A live-URL sweep failed this twice and, when asked where the
+  document was, answered plainly: *"Je ne l'avais pas créé — j'avais rendu le
+  rapport directement dans la réponse."* Now stated in §6 Modes, where every mode
+  invocation reads, and repeated in the quick-mode section and the quick command.
+  **A rule written in a section a mode never loads is not a rule.**
 - **The report is always a file — the "never write into `~`" rule was being read
   as licence not to write at all.** A live-URL run produced a full review, five
   and a half minutes of work, and left nothing on disk; a screenshot run in the
