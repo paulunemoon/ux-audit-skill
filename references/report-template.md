@@ -299,6 +299,12 @@ UX one. Say so.>
 Each is a hypothesis. **The severity shown is the severity if the risk is
 confirmed** — not a judgment on the product as it stands.
 
+**Nothing below Medium belongs here.** A Low hypothesis about a product nobody
+has seen is speculation about polish — "their radius scale might be
+inconsistent" — and it costs the reader's attention without being checkable.
+A description-only review is legitimately top-heavy: raise only what is worth
+raising blind. If a risk isn't worth the user opening the app to check, drop it.
+
 #### H-FLOW-01 · <the risk, named as a claim>
 
 | | |

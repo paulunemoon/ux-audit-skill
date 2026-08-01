@@ -8,6 +8,12 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- **A description-only review raises nothing below Medium.** A re-run of the
+  same description-only prompt produced 13 risks graded 2 Blocker / 6 High /
+  5 Medium and no Low at all, which is right: a Low hypothesis about an unseen
+  product is speculation about polish and cannot be checked. Written down so it
+  survives — the shape is legitimately top-heavy, and a risk not worth opening
+  the app for should be dropped rather than graded.
 - **`computed` joins the confidence qualifiers, and is distinguished from
   `measured`.** A quick-mode run labelled its contrast findings
   `Observed (code + computed)` and stated in the closing note that the figures
