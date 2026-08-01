@@ -165,9 +165,9 @@ Every finding, without exception:
 
 ```
 ID              stable, dimension-prefixed — NAV-03, A11Y-07, FORM-02
-Dimension       one of the 16 above (or WEB3)
+Dimension       the primary one of the 16 (or WEB3); name the others it touches
 Severity        Blocker | High | Medium | Low
-Confidence      Observed | Inferred | Hypothesis
+Confidence      Observed (source) | Inferred | Hypothesis
 Location        screen, flow step, component, file:line, or Figma node
 Evidence        what you actually saw — quote the label, describe the state
 Why it matters  the user consequence, not the rule citation
@@ -211,14 +211,25 @@ sees every day outranks a High on a settings page three people visit.
 
 ### Confidence — earned, not assumed
 
-- **Observed** — you saw it: in the running product, the screenshot, the Figma
-  node, or the code that indisputably produces it.
-- **Inferred** — the evidence strongly implies it but you didn't see the
-  rendered result (code shows no `onError` branch → the error state is probably
-  missing).
+- **Observed** — you saw it. **Always name the source in parentheses**, because
+  "Observed" alone hides the difference between reading a line of CSS and
+  measuring a rendered pixel: `Observed (code)` · `Observed (rendered)` ·
+  `Observed (measured)` · `Observed (design file)` · `Observed (recording)`.
+  Combine when both apply — `Observed (code + measured)`.
+- **Inferred** — the evidence strongly implies it but you didn't see the result
+  (code has no `onError` branch → the error state is probably missing).
 - **Hypothesis** — plausible from a description, unverified. Phrase it as a
   question. **Never present a hypothesis in the findings table as if it were
   observed**; group them in §6 of the report.
+
+**Split the label when the finding is part fact and part inference.** Reading
+code tells you what exists; it does not tell you how it looks or feels. A
+finding whose existence you read but whose *appearance* you never saw is
+`Observed (code); rendering Inferred` — one label, honestly compound. This is
+the single most common place confidence gets quietly inflated: the scope section
+says nine of ten screens were never rendered, and then every finding is marked
+Observed anyway. If §1 says a whole class of evidence is missing, the per-finding
+labels have to show it.
 
 ### Effort
 

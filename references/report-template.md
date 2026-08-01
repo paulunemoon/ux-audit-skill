@@ -120,7 +120,7 @@ The schema rendered as prose. Keep this density — enough to act on, no padding
 |---|---|
 | **Dimension** | Core task flows (D3) |
 | **Severity** | Blocker |
-| **Confidence** | Observed |
+| **Confidence** | Observed (rendered + code) |
 | **Effort** | M |
 | **Location** | `/transfer` — compose screen; `TransferForm.tsx:88–142` |
 
@@ -395,6 +395,13 @@ works, with known weaknesses · **4** solid, minor issues · **5** exemplary.
   skill's internal bookmarks; the team reading the report has never seen them and
   owes them nothing. "Why it matters" opens on what happens to the person. Check
   IDs belong in a trailing `Related.` line or nowhere (SKILL.md §3).
+- **Count anything you state a number for.** Section headings that carry a count
+  ("Accessibility — 6 findings"), the total in the summary, the backlog length:
+  these drift as findings are added, and a heading that says six above seven
+  findings costs the reader's trust in every other number in the report.
+  **Write the counts last, from the finished document, or leave them out.** The
+  same applies to what you say about the report in conversation — if you tell
+  someone it holds 34 findings, count them.
 - **Quote, don't paraphrase.** "The button reads *Continue*", not "the button
   has generic copy".
 - **Locations are precise.** URL, screen name, `file.tsx:42`, Figma node id.
