@@ -410,6 +410,21 @@ renamed in one place only; the design file two redesigns behind the product.
 file is simply stale, say so — the recommendation is about which is the source
 of truth, not about fixing every difference.
 
+**Judge each mismatch on merit; the design file is not automatically the
+authority.** The reflex is that code drifted and code is wrong. Often it's the
+reverse: a real audit found a navbar control at 46px in code against 54px in
+Figma, and the code was the better artefact — 46px clears the 44px touch
+minimum, the Figma's 42px mobile variant does not. Another mismatch traced to
+the design file being one commit behind a change the code had already shipped.
+
+So for each difference, say **which side you'd keep and why**, in user terms.
+And where the pattern across the file is that code leads and Figma trails, the
+finding is not "reconcile these values" — it is **"decide which one is the
+source of truth"**, which is a process decision the team has to make once and
+which costs far less than a tokenization project. Two questions usually gate the
+recommendation and are worth asking rather than assuming: is the design file
+still maintained, and is the thing you're flagging a deliberate house style?
+
 ---
 
 ## How to report drift

@@ -8,6 +8,22 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- **The onchain module is gated by scope, not just by signal.** §0e said
+  "signals present -> load web3.md". A tokens review of a repo that ships
+  `@solana/*` correctly declined to load it, on the grounds that onchain
+  surfaces were not in the requested scope — a judgment the gate did not
+  authorise but which is plainly right. The question is what you were asked to
+  look at, not what the package.json contains.
+- **Design/build drift is judged on merit, not resolved in the design file's
+  favour** (`design-system.md`, DS-N). The reflex is that code drifted and code
+  is wrong. A Figma-plus-code run found a navbar control at 46px in code against
+  54px in Figma and kept the code — 46px clears the 44px touch minimum, the
+  Figma's 42px mobile variant does not — and traced another mismatch to the
+  design file sitting one commit behind. Where code leads and Figma trails
+  across a whole file, the finding is not "reconcile the values" but "decide
+  which is the source of truth", which costs a fraction of a tokenization
+  project. Two questions now stated as worth asking rather than assuming: is the
+  design file still maintained, and is this a deliberate house style.
 - **The report is always a file — the "never write into `~`" rule was being read
   as licence not to write at all.** A live-URL run produced a full review, five
   and a half minutes of work, and left nothing on disk; a screenshot run in the

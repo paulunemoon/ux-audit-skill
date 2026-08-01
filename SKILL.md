@@ -82,8 +82,13 @@ Check before asking: `@solana/*`, `@solana-mobile/*`, `@coral-xyz/anchor`,
 Hardhat/Foundry, `.sol` contracts, or wallet/token/swap/staking copy in the
 product itself.
 
-- **Signals present** → load `references/web3.md` **in addition to** the general
-  dimensions. It layers on; it never replaces them.
+- **Signals present *and* onchain surfaces are in scope** → load
+  `references/web3.md` **in addition to** the general dimensions. It layers on;
+  it never replaces them.
+- **Signals present but the scope doesn't reach them** → don't load it, and say
+  so in one line. A tokens review, an accessibility pass, or a marketing-page
+  audit of a product that happens to ship `@solana/*` needs none of it. The
+  question is what you were asked to look at, not what the `package.json` says.
 - **Nothing onchain** → never load it, never mention it.
 - **Genuinely unclear** (crypto-adjacent wording, no code access) → ask once. Do
   not assume.
