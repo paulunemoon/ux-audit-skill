@@ -243,8 +243,15 @@ sees every day outranks a High on a settings page three people visit.
 - **Observed** — you saw it. **Always name the source in parentheses**, because
   "Observed" alone hides the difference between reading a line of CSS and
   measuring a rendered pixel: `Observed (code)` · `Observed (rendered)` ·
-  `Observed (measured)` · `Observed (design file)` · `Observed (recording)`.
-  Combine when both apply — `Observed (code + measured)`.
+  `Observed (measured)` · `Observed (computed)` · `Observed (design file)` ·
+  `Observed (recording)`. Combine when both apply — `Observed (code + computed)`.
+
+  **`measured` and `computed` are not the same claim**, and contrast is where
+  the difference bites. A ratio read off rendered pixels is *measured*; a ratio
+  produced by running `contrast-check.py` on hex values found in a stylesheet is
+  *computed* — it assumes those values reach the screen unmodified by opacity,
+  a filter, a cascade, or whatever sits behind them. Computed is usually right
+  and always cheaper; it is still not the same as having looked.
 - **Inferred** — the evidence strongly implies it but you didn't see the result
   (code has no `onError` branch → the error state is probably missing).
 - **Hypothesis** — plausible from a description, unverified. Phrase it as a

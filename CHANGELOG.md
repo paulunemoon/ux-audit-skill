@@ -4,6 +4,21 @@ All notable changes to this skill are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- **`computed` joins the confidence qualifiers, and is distinguished from
+  `measured`.** A quick-mode run labelled its contrast findings
+  `Observed (code + computed)` and stated in the closing note that the figures
+  were "computed from declared hex values rather than measured on screen" — a
+  distinction the enumerated list did not offer, so following it literally meant
+  writing `measured` for a value nobody had looked at. A ratio read off rendered
+  pixels is measured; a ratio produced by running `contrast-check.py` over a
+  stylesheet is computed, and it assumes those values reach the screen
+  unmodified by opacity, a filter, or a cascade. Usually right, always cheaper,
+  still not the same as having looked.
+
 ## [1.1.0] — 2026-08-01
 
 Five real audit runs against live projects, and everything below comes from
