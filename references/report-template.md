@@ -7,17 +7,24 @@
 > Default deliverable: **a Markdown file** in the working directory, named
 > `ux-audit-<scope>-<YYYY-MM-DD>.md` unless the user asks otherwise. Write the
 > file; don't only print the report into the conversation.
+>
+> **Never write it into the home directory.** A description-only review often
+> runs from `~` because there's no repo to be in — dropping a report there
+> clutters somewhere the user doesn't curate. If the working directory is `~`
+> or otherwise isn't a project, say where you're putting it and use a sensible
+> subdirectory, or ask.
 
 ## Table of contents
 1. [Full audit report](#full-audit-report)
 2. [A worked finding](#a-worked-finding)
 3. [Quick mode report](#quick-mode-report)
 4. [Flow mode report](#flow-mode-report)
-5. [Accessibility mode report](#accessibility-mode-report)
-6. [Tokens mode report](#tokens-mode-report)
-7. [The state-coverage matrix](#the-state-coverage-matrix)
-8. [Maturity ratings, if used](#maturity-ratings-if-used)
-9. [Writing rules](#writing-rules)
+5. [Description-only review](#description-only-review)
+6. [Accessibility mode report](#accessibility-mode-report)
+7. [Tokens mode report](#tokens-mode-report)
+8. [The state-coverage matrix](#the-state-coverage-matrix)
+9. [Maturity ratings, if used](#maturity-ratings-if-used)
+10. [Writing rules](#writing-rules)
 
 ---
 
@@ -251,6 +258,91 @@ audit — but only propose it where you have enough evidence to be concrete.>
 ````
 
 ---
+
+## Description-only review
+
+When there is no product to look at — no URL, no repo, no screenshot, no Figma —
+the document is not an audit and must not be shaped like one. **Forcing a
+description-only review into the standard structure produces an empty §2–§5 and
+a §6 carrying everything**, which is unreadable. Change the shape instead:
+
+````markdown
+# UX review — <product> <!-- "review", never "audit" -->
+
+## 1. Scope & evidence base
+
+**Evidence available:** <a three-sentence description. No URL, no repo, no
+Figma, no screenshot.>
+
+**What that means, in one sentence:** I have seen no screen, so **there is not a
+single observation in this document.** Only hypotheses and the questions that
+settle them. <Name what you don't know: what a button says, what day one looks
+like, whether an error state exists.> Ten minutes with the real product would
+turn half of these into observations — and would invalidate some of them, which
+is also information.
+
+**What I could not assess at all:** <list the dimensions — usually nine or ten
+of the sixteen.> No accessibility conformance claim is made.
+
+**What reads as well judged, from the description alone:** <two or three
+sentences. Say what's good even here — it shows you engaged with the product
+rather than pattern-matching the category.>
+
+## 2. The structural risk <!-- optional, when one dominates -->
+
+<Some products have one problem that precedes every interface question. If there
+is one, it goes here, before the list, and it is a product finding rather than a
+UX one. Say so.>
+
+## 3. Risks
+
+Each is a hypothesis. **The severity shown is the severity if the risk is
+confirmed** — not a judgment on the product as it stands.
+
+#### H-FLOW-01 · <the risk, named as a claim>
+
+| | |
+|---|---|
+| **Dimension** | <primary · secondary> |
+| **Severity if confirmed** | **Blocker** |
+| **Effort** | M |
+
+**The risk.** <The mechanism, and the failure mode it produces. Be specific
+about *how* it fails — a failure mode named precisely is what makes a hypothesis
+worth checking.>
+
+**The questions that settle it.** <Two or three questions someone with the
+product open can answer in a minute.>
+
+**If the answer is <the bad one>.** <The concrete change, conditional on the
+answer. Copy rewrites verbatim, as always.>
+
+## 4. What I'd do first
+## 5. What I need to turn this into an audit
+
+<The specific evidence, named: which screens, which states, which flows.>
+
+---
+
+*Review from a description, not an audit. No screen was observed. The risks
+above are hypotheses drawn from the known traps of this product category — not
+observed defects — and some will be invalidated by the first screenshot, which
+is the point.*
+````
+
+**The five things that make this work:**
+- **`H-` prefix on every ID.** The hypothesis is marked in the identifier, so it
+  survives being quoted out of context into a ticket.
+- **"Severity if confirmed"**, not "Severity" — and said again under the section
+  heading. The grade is conditional and the field name says so.
+- **"The questions that settle it"** replaces Evidence, which cannot exist here.
+- **No Confidence column.** Every row would read `Hypothesis`; a column of one
+  repeated value is noise. State the level once at the top and once at the
+  bottom instead, prominently.
+- **The closing note welcomes being wrong.** "Some will be invalidated by the
+  first screenshot, which is the point" is the sentence that keeps the document
+  honest, and it makes the ask for evidence land as collaboration rather than
+  as a caveat.
 
 ## Accessibility mode report
 

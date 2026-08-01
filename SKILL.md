@@ -103,6 +103,25 @@ If the audience is unstated and unguessable, ask — it's the single question wi
 the widest blast radius. If the product itself answers it (a bank's public
 signup is mainstream; an internal ops console is expert), don't ask.
 
+**Then note the stakes, which are a separate axis.** Health, money, legal
+standing, safety, children, and anything irreversible raise the bar
+independently of expertise, and they raise it in specific ways worth stating in
+the scope section:
+
+- **Tone stays sober** whatever the product's usual voice. Cheerful copy at a
+  bad moment reads as the product not understanding what just happened.
+- **Claims about the user's body, money, or rights commit you** — an
+  unqualified number is a promise, and it needs its basis and its uncertainty
+  attached.
+- **The data collected is sensitive by category**, so consent, retention, and
+  export get graded harder (`trust-and-dark-patterns.md`).
+- **Failure is asymmetric.** In an ordinary product a discouraging screen costs
+  a session; here it can cost the user the outcome the product exists for, and
+  it will look like ordinary churn in the analytics.
+
+A cheerful tone is a Low finding in a to-do app and a High one in a relapse
+screen. Say which world you're in before you start grading.
+
 **Once the gate is resolved, state your reading of it in one short paragraph at
 the top of the report.** A reader who disagrees with the scope or the audience
 call needs to see it before the findings, not infer it from them.
@@ -230,7 +249,10 @@ sees every day outranks a High on a settings page three people visit.
   (code has no `onError` branch → the error state is probably missing).
 - **Hypothesis** — plausible from a description, unverified. Phrase it as a
   question. **Never present a hypothesis in the findings table as if it were
-  observed**; group them in §6 of the report.
+  observed.** A few of them among real findings go in §6 of the report. When
+  the *whole* review is hypotheses — a description-only request — don't force
+  them into §6; the document changes shape instead (`report-template.md`,
+  description-only review).
 
 **Split the label when the finding is part fact and part inference.** Reading
 code tells you what exists; it does not tell you how it looks or feels. A
